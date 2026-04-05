@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Silent Leveling</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar glass">
+            <div class="sidebar-header">
+                <h2>Silent Leveling</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="active">Habits</a>
+                <a href="#">Analytics</a>
+                <a href="#">Settings</a>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="btn-secondary">Log Out</button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-header">
+                <div>
+                    <h1 id="greeting">Welcome Back</h1>
+                    <p>Current Month: <span id="currentMonthStr"></span></p>
+                </div>
+                <div class="stats-panel">
+                    <div class="stat-card glass">
+                        <div class="stat-value" id="statCompleted">0</div>
+                        <div class="stat-label">Total Completes</div>
+                    </div>
+                    <div class="stat-card glass">
+                        <div class="stat-value accent-text" id="statRate">0%</div>
+                        <div class="stat-label">Success Rate</div>
+                    </div>
+                </div>
+            </header>
+
+            <section class="habit-section glass">
+                <div class="habit-header">
+                    <h2>Daily Execution</h2>
+                    <form id="addHabitForm" class="add-habit-form">
+                        <input type="text" id="newHabitName" placeholder="New Habit (e.g. Read 10 pages)" required>
+                        <button type="submit" class="btn-primary">Add</button>
+                    </form>
+                </div>
+
+                <div class="tracker-container">
+                    <div class="tracker-grid" id="trackerGrid">
+                        </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html>

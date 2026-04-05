@@ -1,0 +1,203 @@
+/* dashboard.css */
+.dashboard-layout {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    background: var(--bg-color);
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    height: calc(100vh - 2rem);
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    border-radius: var(--radius-lg);
+}
+
+.sidebar-header h2 {
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+    letter-spacing: -0.5px;
+}
+
+.sidebar-nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sidebar-nav a {
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-md);
+    color: var(--text-muted);
+    transition: var(--transition);
+}
+
+.sidebar-nav a:hover, .sidebar-nav a.active {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+}
+
+.sidebar-footer {
+    margin-top: auto;
+}
+
+.sidebar-footer button {
+    width: 100%;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 2rem 3rem 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Header */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.top-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.25rem;
+}
+
+.stats-panel {
+    display: flex;
+    gap: 1rem;
+}
+
+.stat-card {
+    padding: 1rem 1.5rem;
+    min-width: 140px;
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Habit Section */
+.habit-section {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex: 1;
+}
+
+.habit-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.add-habit-form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.add-habit-form input {
+    padding: 0.5rem 1rem;
+    background: rgba(0,0,0,0.2);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    color: white;
+    width: 250px;
+}
+
+.add-habit-form input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+/* Tracker Grid */
+.tracker-container {
+    overflow-x: auto;
+    padding-bottom: 1rem;
+}
+
+.tracker-grid {
+    display: grid;
+    gap: 4px;
+    /* First col is habit name (150px), followed by 31 days (min 30px) */
+    grid-template-columns: 200px repeat(31, minmax(32px, 1fr));
+    align-items: center;
+}
+
+.grid-header {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-align: center;
+    padding: 0.5rem 0;
+}
+
+.habit-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding-right: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.habit-cell {
+    width: 100%;
+    aspect-ratio: 1;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.habit-cell:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.habit-cell.done {
+    background: var(--accent);
+    border-color: var(--accent);
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.2);
+}
+
+.habit-row-delete {
+    background: transparent;
+    border: none;
+    color: #ef4444;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+    opacity: 0.5;
+}
+.habit-row-delete:hover { opacity: 1; }
+
+@media (max-width: 1024px) {
+    .dashboard-layout { flex-direction: column; }
+    .sidebar { width: auto; height: auto; margin: 0; border-radius: 0; padding: 1rem; flex-direction: row; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--glass-border); }
+    .sidebar-header h2 { margin-bottom: 0; }
+    .sidebar-nav { flex-direction: row; }
+    .top-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+}
