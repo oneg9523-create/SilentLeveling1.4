@@ -1,4 +1,3 @@
-/* dashboard.css */
 .dashboard-layout {
     display: flex;
     height: 100vh;
@@ -6,7 +5,6 @@
     background: var(--bg-color);
 }
 
-/* Sidebar */
 .sidebar {
     width: 250px;
     height: calc(100vh - 2rem);
@@ -50,7 +48,6 @@
     width: 100%;
 }
 
-/* Main Content */
 .main-content {
     flex: 1;
     overflow-y: auto;
@@ -60,7 +57,6 @@
     gap: 2rem;
 }
 
-/* Header */
 .top-header {
     display: flex;
     justify-content: space-between;
@@ -96,8 +92,6 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
-
-/* Habit Section */
 .habit-section {
     padding: 2rem;
     display: flex;
@@ -133,7 +127,7 @@
     border-color: var(--primary);
 }
 
-/* Tracker Grid */
+
 .tracker-container {
     overflow-x: auto;
     padding-bottom: 1rem;
@@ -142,7 +136,6 @@
 .tracker-grid {
     display: grid;
     gap: 4px;
-    /* First col is habit name (150px), followed by 31 days (min 30px) */
     grid-template-columns: 200px repeat(31, minmax(32px, 1fr));
     align-items: center;
 }
