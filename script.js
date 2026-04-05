@@ -1,6 +1,4 @@
-/* script.js */
 document.addEventListener('DOMContentLoaded', () => {
-    // Intersection Observer for Scroll Animations
     const observerOptions = {
         root: null,
         rootMargin: '0px',
@@ -19,8 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.observe').forEach(el => {
         observer.observe(el);
     });
-
-    // Smooth Scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
