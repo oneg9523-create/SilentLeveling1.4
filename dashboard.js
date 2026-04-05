@@ -1,4 +1,3 @@
-/* dashboard.js */
 document.addEventListener('DOMContentLoaded', () => {
     const currentUser = localStorage.getItem('sl_currentUser');
     if (!currentUser) {
@@ -16,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('currentMonthStr').textContent = `${monthNames[date.getMonth()]} ${date.getFullYear()}`;
     const daysInMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
 
-    // --- DEFAULT HABITS LIST ---
     const defaultHabits = [
         "Wake up at 5am ⏰",
         "Gym/Stretch 💪",
@@ -31,12 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
         "Drink 3L of Water 💧",
         "Goal Journaling 📜"
     ];
-
-    // Load or initialize habit data
     const dataKey = `sl_data_${currentUser}`;
     let userData = JSON.parse(localStorage.getItem(dataKey));
 
-    // If no data exists for this user, populate with defaults
+
     if (!userData || !userData.habits || userData.habits.length === 0) {
         userData = {
             habits: defaultHabits.map(name => ({
@@ -65,8 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
             dayHeader.textContent = i;
             trackerGrid.appendChild(dayHeader);
         }
-
-        // Render Habit Rows
         userData.habits.forEach((habit, hIndex) => {
             const nameContainer = document.createElement('div');
             nameContainer.className = 'habit-name';
